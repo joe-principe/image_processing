@@ -26,15 +26,22 @@ img = imread("peppers.png");
 gs1 = 0.299 .* img(:,:,1) + 0.587 .* img(:,:,2) + 0.114 .* img(:,:,3);
 gs2 = img(:,:,1) ./ 3 + img(:,:,2) ./ 3 + img(:,:,3) ./ 3;
 
+% Write the grayscaled images out to file
+% imwrite(gs1, "gs1_m.ppm");
+% imwrite(gs2, "gs2_m.ppm");
+
 % Display the images
 subplot(1, 3, 1);
-imshow(img(100:280, 160:340, :));
+% imshow(img(100:280, 160:340, :));
+imshow(img);
 title("Original color image");
 
 subplot(1, 3, 2);
-imshow(gs1(100:280, 160:340));
+% imshow(gs1(100:280, 160:340));
+imshow(gs1);
 title("Grayscale using weights");
 
 subplot(1, 3, 3);
-imshow(gs2(100:280, 160:340));
+% imshow(gs2(100:280, 160:340));
+imshow(gs2);
 title("Grayscale using averaging");
